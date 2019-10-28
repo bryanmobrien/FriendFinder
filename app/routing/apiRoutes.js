@@ -27,7 +27,7 @@ module.exports = function(app) {
         // It will do this by sending out the value "true" have a table.
         // req.body is available since we're using the body parsing middleware.
         let Score = 25;
-        let bff;
+        let bestfriend;
 
         //loop through friends array  
         for(let i = 0; i < friends.length; i++){
@@ -45,12 +45,12 @@ module.exports = function(app) {
 
             if (match < Score) {
               Score = match;
-              bff = friends[i];
+              bestfriend = friends[i];
             }
         }
 
         // to user
-        res.json(bff);
+        res.json(bestfriend);
 
         // to array
         friends.push(req.body);
